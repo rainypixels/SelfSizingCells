@@ -26,8 +26,11 @@ I am marking this as a serious bug as this stuttering issue renders the self-siz
 1. The contentOffset printed to the debugger output is usually different before and after segue, sometimes by a significant amount. It’s not so unusual to see the same contentOffset, though, but a few tries through the repro steps will definitely expose the issue. 
 2. Lots of stuttering the first time you scroll upwards after a segue. The stuttering can be observed even when the contentOffset reported is the same. 
 
-## Hardware used
+## Configuration
 iPhone 6 64GB (and iPhone 5S 32GB) AT&T
+
+## Version & Build
+iOS 8.0.2 (12A405)
 
 ## Additional Notes
 The stuttering and contentOffset issues vary quite a bit based on the `estimatedRowHeight` value for the tableView. They improve when you try to get to a true estimatedValue, but the result is still far from shippable imo. 
