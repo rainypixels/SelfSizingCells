@@ -1,4 +1,4 @@
-This repo contains a sample app to help repro the bug (([rdar://18698008](rdar://18698008), [http://openradar.appspot.com/10958564](http://openradar.appspot.com/10958564)) detailed below:
+This repo contains a sample app to help repro the bug ([rdar://18698008](rdar://18698008), [http://openradar.appspot.com/10958564](http://openradar.appspot.com/10958564)) detailed below: 
 
 ## Title
 Stuttering & incorrect contentOffset issues when segueing back to a UITableView using self-sizing cells (iOS8)
