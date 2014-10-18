@@ -52,6 +52,10 @@ class MainController: UITableViewController {
         "Claw drapes use lap as chair stare at the wall, play with food and get confused by dust, and present belly, scratch hand when stroked sun bathe meow all night having their mate disturbing sleeping humans chase mice. Climb leg shake treat bag lick arm hair for play riveting piece on synthesizer keyboard"
     ]
     
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // grab cell from xib

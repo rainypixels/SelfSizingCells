@@ -24,7 +24,7 @@ I am marking this as a serious bug as this stuttering issue renders the self-siz
 5. Scroll upwards (towards initial contentOffset)
 6. Repeat from step 2 with a different scroll offset
 
-## Expect Results
+## Expected Results
 1. The contentOffset printed to the debugger output should always be identical before and after the segue
 2. No stuttering (apart from frame rate rendering issues) should be visible during scrolling
 
