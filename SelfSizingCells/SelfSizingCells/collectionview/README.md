@@ -1,3 +1,7 @@
+## Radar Info
+* [rdar://118787362](rdar://18787362)
+* [http://openradar.appspot.com/18787362](http://openradar.appspot.com/18787362)
+
 ## Title
 Unpredictable sizing/positioning issues for UICollectionView cells that use self-sizing (iOS8, estimatedItemSize)
 
