@@ -31,7 +31,7 @@
             <connections>
                 <outlet property="label" destination="Do4-CZ-LFm" id="CHc-Bf-qJa"/>
             </connections>
-            <point key="canvasLocation" x="637" y="371.5"/>
+            <point key="canvasLocation" x="550" y="348.5"/>
         </tableViewCell>
     </objects>
 </document>

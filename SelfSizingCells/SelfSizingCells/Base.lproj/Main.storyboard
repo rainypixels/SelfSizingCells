@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
     </dependencies>
     <scenes>
-        <!--Main Controller-->
+        <!--rdar://18698008-->
         <scene sceneID="WOd-5e-Qud">
             <objects>
                 <tableViewController id="QA7-S0-wdj" customClass="MainController" customModule="SelfSizingCells" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,10 +25,10 @@
                             <outlet property="delegate" destination="QA7-S0-wdj" id="kS5-XR-Xcz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Hc9-ln-0LV">
-                        <barButtonItem key="rightBarButtonItem" title="More" id="hq3-wc-wly">
+                    <navigationItem key="navigationItem" title="rdar://18698008" id="Hc9-ln-0LV">
+                        <barButtonItem key="rightBarButtonItem" title="UICV" id="hq3-wc-wly">
                             <connections>
-                                <segue destination="MxH-8S-rjj" kind="presentation" modalTransitionStyle="coverVertical" id="Iju-V1-cQW"/>
+                                <segue destination="Rgd-iT-Fuy" kind="presentation" id="98W-Wb-rER"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -37,38 +37,52 @@
             </objects>
             <point key="canvasLocation" x="1233" y="340"/>
         </scene>
-        <!--More Controller-->
-        <scene sceneID="Mzk-Ft-nhL">
+        <!--Collection View Controller-->
+        <scene sceneID="Eva-SG-0IV">
             <objects>
-                <viewController id="MxH-8S-rjj" customClass="MoreController" customModule="SelfSizingCells" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u61-o7-TGT"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Wt-Mw-bJZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YPZ-np-YDp">
+                <collectionViewController id="wIW-7b-bx9" customClass="CollectionViewController" customModule="SelfSizingCells" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="mm9-Da-WXc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roM-gg-aeV">
-                                <rect key="frame" x="273" y="285" width="54" height="30"/>
-                                <state key="normal" title="Dismiss">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissBtnTapped:" destination="MxH-8S-rjj" eventType="touchUpInside" id="Mwk-nw-kur"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="roM-gg-aeV" secondAttribute="centerY" id="Axl-J7-tSj"/>
-                            <constraint firstAttribute="centerX" secondItem="roM-gg-aeV" secondAttribute="centerX" id="Ilf-oP-tVN"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M21-oC-sjl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZIz-8L-RDb">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="pIM-lF-u04">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.99994784593582153" green="1" blue="0.9998740553855896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="wIW-7b-bx9" id="2l6-nK-qEi"/>
+                            <outlet property="delegate" destination="wIW-7b-bx9" id="vfW-gS-Qdu"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="QWc-fk-oeF">
+                        <barButtonItem key="leftBarButtonItem" title="itemSize (screenWidth, 200)" id="rJm-Za-EWL">
+                            <connections>
+                                <action selector="toggleTapped:" destination="wIW-7b-bx9" id="mJF-AE-Nkr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Dismiss" id="ZVQ-yO-51j">
+                            <connections>
+                                <action selector="dismissTapped:" destination="wIW-7b-bx9" id="gVZ-pU-NVH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pff-MS-sH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="340"/>
+            <point key="canvasLocation" x="2809" y="340"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ha8-IT-vIw">
@@ -87,6 +101,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYn-9b-QUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="421" y="340"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pKb-yi-N92">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rgd-iT-Fuy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="frL-3l-PW0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wIW-7b-bx9" kind="relationship" relationship="rootViewController" id="x3d-fu-kog"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uCX-bf-OYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1997" y="340"/>
         </scene>
     </scenes>
 </document>
